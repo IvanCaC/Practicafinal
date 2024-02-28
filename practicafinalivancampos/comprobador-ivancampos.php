@@ -1,27 +1,6 @@
 <?php
 session_start();
-/*
-if (isset($_POST["usuario"]) && isset($_POST["password"])) {
-    $usuario = substr($_POST["usuario"], 0, 30);
-    $password = substr($_POST["password"], 0, 30);
-    $password2 = substr($_POST["password2"], 0, 30);
-if (strlen($password) >= 6) {
-$mysqli = new mysqli("127.0.0.1", "root", "", "practicafinal");
 
-if ($mysqli) {
-    $sql = "INSERT INTO usuarios (usuario, pass) VALUES ('$usuario', '$password')";
-    if ($mysqli->query($sql)) {
-        echo "Creacion de cuenta exitosa";
-    } else {
-        echo "Error en la creacion de la cuenta: " . $mysqli->error;
-    }
-}
-}
-else {
-    echo "contraseña minimo de 6 caracteres";
-}
-
-*/
 include "errores-ivancampos.php";
 if (isset($_POST["usuario"]) && isset($_POST["password"])){ // si tenemos datos del formulario en index hacemos la conexion a la base de datos
     $mysqli = new mysqli ("127.0.0.1", "root", "", "practicafinal"); // nos conectamos a la base de datos
