@@ -62,6 +62,9 @@ if (isset($_POST["insertar"])) { // con los datos del formulario de abajo los as
 elseif (isset($_POST["cerrar_sesion"])){  // si seleccionamos cerrar sesion en nuestro formulario cerramos la sesion
     header("Location:cerrarsesionivancampos.php");
 }
+elseif (isset($_POST["gestiona_usuarios"])){
+    header ("Location:modificacionusuarios-ivancampos.php");
+}
 // Consulta para obtener todos los artículos
 $sql = "SELECT coda, nombre, pvp, iva FROM articulos"; // esta parte no va dentro de un if, ya que queremos que se realize siempre queremos seleccionar toda la informacion de la tabla articulos
 $res = $mysqli->query($sql); // añadimos una variable al resultado de la consulta anterior
@@ -118,11 +121,17 @@ if ($res) { // SI la consulta es exitosa
         <button type="submit" name="insertar">Insertar</button>
         <button type="submit" name="borrar">Borrar</button>
         <button type="submit" name="actualizar">Actualizar</button>
-        </div>
+       
     </form>
+    <form action="articulos-ivancampos.php" method="POST">
+    <button type="submit" name="gestiona_usuarios">Ir a la pagina para gestionar usuarios</button>
+    </form>
+
+    </div>
     <form action="articulos-ivancampos.php" method="POST"><!-- Formulario para cerrar la sesion y salir de la pagina-->
     <button type="submit" name="cerrar_sesion">Cerrar session</button>
     </form>
+
     
     </div>
 </body>
