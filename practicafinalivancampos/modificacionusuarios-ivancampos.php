@@ -54,6 +54,9 @@ if (isset($_POST["insertar"])) {
     }
   
 }
+elseif (isset($_POST["gestion_articulos"])){
+    header("Location:articulos-ivancampos.php");
+}
 elseif (isset($_POST["cerrar_sesion"])){
     header("Location:cerrarsesionivancampos.php");
 }
@@ -103,8 +106,13 @@ if ($res) {
         <button type="submit" name="insertar">Insertar</button>
         <button type="submit" name="borrar">Borrar</button>
         <button type="submit" name="actualizar">Actualizar</button>
-        </div>
+        
+     
     </form>
+    <form action="modificacionusuarios-ivancampos.php" method="POST">
+        <button type="submit" name="gestion_articulos">volver a gestionar articulos</button>
+        </form>
+    </div>
     <form action="modificacionusuarios-ivancampos.php" method="POST">
     <button type="submit" name="cerrar_sesion">Cerrar session</button>
     </form>
