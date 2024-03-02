@@ -91,13 +91,13 @@ if ($res) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Artículos</title>
+    <title>Lista de usuarios</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <div table >
     <div id="wrapper">
-    <h2>Insertar, Borrar y Actualizar Artículos</h2>
+    <h2>Insertar, Borrar y Actualizar usuarios</h2>
     <form action="modificacionusuarios-ivancampos.php" method="POST">
         <label for="usuario">Usuario</label>
         <input type="text" name="usuario" id="usuario" required>
