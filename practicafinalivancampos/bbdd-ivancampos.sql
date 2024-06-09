@@ -12,6 +12,18 @@ CREATE TABLE usuarios (
   pass VARCHAR(100) NOT NULL,
   CONSTRAINT usuarios_pk PRIMARY KEY(usuario)
 );
+CREATE TABLE ventas (
+    id INT AUTO_INCREMENT,
+    usuario VARCHAR(30) NOT NULL,
+    coda VARCHAR(100) NOT NULL,
+    fecha DATE NOT NULL,
+    cantidad INT NOT NULL,
+    total_gasto DECIMAL(10, 2) NOT NULL,
+    CONSTRAINT PK_VENTAS PRIMARY KEY (id),
+    CONSTRAINT FK_USUARIO FOREIGN KEY (usuario) REFERENCES usuarios(usuario),
+    CONSTRAINT FK_ARTICULO FOREIGN KEY (coda) REFERENCES articulos(coda)
+);
+
 insert into articulos values ("A1","Elden Ring",60,21);
 insert into articulos values ("A2","Persona 5 Royal",40,21);
 insert into articulos values ("A3","Nier Automata",20,21);
